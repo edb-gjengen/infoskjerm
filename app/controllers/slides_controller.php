@@ -170,10 +170,12 @@ class SlidesController extends AppController {
 	function slideshow()
 	{
 		$slides = $this->Slide->getActiveSlides();
+		var_dump($slides);
 		
 		if(count($slides) == 1) $slides = array_pop($slides);
 		$slides = $this->Slide->find('all', array('conditions'=>array('id'=>$slides)));
-		
+				var_dump($slides);
+		die;
 		if($this->RequestHandler->isAjax())
 		{
 			die(json_encode($slides));
