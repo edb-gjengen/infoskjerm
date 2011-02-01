@@ -40,6 +40,8 @@ class SlidesController extends AppController {
 		{
 			$intervals = array();
 			
+			$intervallength = 3 * 60 * 60;
+			
 			$times = $this->data['Time'];
 			ksort($times);
 			
@@ -51,7 +53,7 @@ class SlidesController extends AppController {
 					$intervals[] = array('start'=>$intStart, 'stop'=>$time,'slide_id'=>$id);
 					$intStart = false;
 				}
-				else if($on && $intStart == 0)
+				else if($on && $intStart === false)
 				{
 					$intStart = $time;
 				}
@@ -59,7 +61,7 @@ class SlidesController extends AppController {
 			
 			if($intStart !== false)
 			{
-				$intervals[] = array('start'=>$intStart, 'stop'=>$time,'slide_id'=>$id);
+				$intervals[] = array('start'=>$intStart, 'stop'=>$time + $intervallength,'slide_id'=>$id);
 			}
 			
 			$ids = $this->Slide->DisplayTime->find('list', array('conditions'=>array('slide_id'=>$id)));
@@ -94,7 +96,7 @@ class SlidesController extends AppController {
 			
 			foreach($display as $d)
 			{
-				for($i = $d['DisplayTime']['start']; $i < $d['DisplayTime']['stop']; $i += 3 * 60 * 60)
+				for($i = $d['DisplayTime']['start']; $i < $d['DisplayTime']['stop']; $i += $intervallength)
 					$this->data['Time'][$i] = 1;
 			}
 		}
