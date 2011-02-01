@@ -36,11 +36,11 @@ class SlidesController extends AppController {
 	
 	function timing($id)
 	{
+		$intervallength = 3 * 60 * 60;
 		if(!empty($this->data))
 		{
 			$intervals = array();
 			
-			$intervallength = 3 * 60 * 60;
 			
 			$times = $this->data['Time'];
 			ksort($times);
