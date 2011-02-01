@@ -167,7 +167,7 @@ class SlidesController extends AppController {
 		$slides = $this->Slide->getActiveSlides();
 		
 		if(count($slides) == 1) $slides = array_pop($slides);
-		$slides = $this->Slide->find('all', array('conditions'=>array('id'=>$slides));
+		$slides = $this->Slide->find('all', array('conditions'=>array('id'=>$slides)));
 		
 		if($this->RequestHandler->isAjax())
 		{
