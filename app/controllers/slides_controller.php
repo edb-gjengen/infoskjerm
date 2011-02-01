@@ -154,10 +154,12 @@ class SlidesController extends AppController {
 	
 	function slideshow()
 	{
-		$ids = $this->Slide->DisplayTime->getActiveSlideIds();
-		$slides = $this->Slide->find('all',array('conditions'=>array('id'=>$ids,'enabled'=>1)));
-//		$slides = $this->Slide->getActiveSlides();
-		
+		//$ids = $this->Slide->DisplayTime->getActiveSlideIds();
+		//$slides = $this->Slide->find('all',array('conditions'=>array('id'=>$ids,'enabled'=>1)));
+		$slides = $this->Slide->getActiveSlides();
+		echo '<pre>';
+		var_dump($slides);
+		die;
 		if($this->RequestHandler->isAjax())
 		{
 			die(json_encode($slides));
@@ -174,30 +176,12 @@ class SlidesController extends AppController {
 		{
 			if($this->Slide->save($this->data))
 			{
-				
-				if($this->data['Slide']['simple'])
-				{
-					$this->data['DisplayTime'][0]['slide_id'] = $id;
-					$this->data['DisplayTime'][0]['start'] = strtotime($this->data['DisplayTime'][0]['start']);
-					$this->data['DisplayTime'][0]['stop'] = strtotime($this->data['DisplayTime'][0]['stop']);
-					
-					$this->Slide->DisplayTime->deleteAll(array('slide_id'=>$id));
-					
-					$this->Slide->DisplayTime->save($this->data['DisplayTime'][0]);
-				}
-				
 				$this->redirect('index');
 			}
 		}
 		else
 		{
 			$this->data = $this->Slide->read();
-		}
-		
-		if(isset($this->data['DisplayTime'][0]))
-		{
-			$this->data['DisplayTime'][0]['start'] = strftime("%F %T", $this->data['DisplayTime']['0']['start']);
-			$this->data['DisplayTime'][0]['stop'] = strftime("%F %T", $this->data['DisplayTime']['0']['stop']);
 		}
 	}
 }

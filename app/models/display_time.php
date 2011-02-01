@@ -7,9 +7,11 @@ class DisplayTime extends AppModel
 
 	var $belongsTo = 'Slide';
 	
-	function getActiveSlideIds()
+	function filterByDisplayTime($ids)
 	{
-		$tmp = $this->find('all', array('fields'=>array('slide_id'), 'conditions'=>array('DisplayTime.start <= '=>time(), 'DisplayTime.stop >= '=>time())));
+		$timeofweek = time() - strtotime('this week midnight');
+		
+		$tmp = $this->find('all', array('fields'=>array('slide_id'), 'conditions'=>array('DisplayTime.slide_id'=>$ids,'DisplayTime.start <= '=>$timeofweek, 'DisplayTime.stop >= '=>$timeofweek)));
 		$ids = Set::extract('/DisplayTime/slide_id', $tmp);
 		return $ids;
 	}
