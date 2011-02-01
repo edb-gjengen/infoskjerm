@@ -48,6 +48,7 @@ echo $html->image('noslides.png');
 <script type="text/javascript">
 var slides = <?php echo json_encode($slides) ?>;
 var count = 0;
+
 $(function(){
 	$("#slideshow iframe, img, #overlay").each(function(){
 		$(this).height(window.innerHeight).width(window.innerWidth);
@@ -62,9 +63,14 @@ $(function(){
 				});
 	}
 	//after:           null,  // transition callback (scope set to element that was shown):  function(currSlideElement, nextSlideElement, options, forwardFlag)
+	
 	$("#slideshow").cycle(
+	
 	{
-		fx:"blindX,blindY,blindZ,cover,curtainX,curtainY,fade,fadeZoom,growX,growY,none,scrollUp,scrollDown,scrollLeft,scrollRight,scrollHorz,scrollVert,shuffle,slideX,slideY,toss,turnUp,turnDown,turnLeft,turnRight,uncover,wipe,zoom",
+		fx:"blindX,blindY,blindZ,cover,curtainX,curtainY,fade,"+
+		   "fadeZoom,growX,growY,none,scrollUp,scrollDown,"+
+		   "scrollLeft,scrollRight,scrollHorz,scrollVert,"+
+		   "shuffle,slideX,slideY,toss,turnUp,turnDown,turnLeft,turnRight,uncover,wipe,zoom",
 		timeout:6000,
 		speed:2000,
 		after:function(currSlideElement, nextSlideElement)
@@ -81,6 +87,7 @@ $(function(){
 		});
 });
 
+
 function updateSlides()
 {
 	$.getJSON("<?php echo Router::url('/slides/slideshow') ?>",function(newslides)
@@ -92,4 +99,5 @@ function updateSlides()
 setInterval(updateSlides, 120000);
 if($("img").length)
 	setTimeout(function(){$("img").hide("fast")},5000);
+
 </script>
