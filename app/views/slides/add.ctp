@@ -18,8 +18,8 @@ echo $form->file('Upload.file');
 
 echo '<p>Skal sliden bare være synlig i et bestemt tidsintervall?</p>';
 
-echo $form->input('start', array('class'=>'date'));
-echo $form->input('stop', array('class'=>'date'));
+echo $form->input('start', array('type'=>'text','class'=>'date'));
+echo $form->input('stop', array('type'=>'text','class'=>'date'));
 
 ?>
 </fieldset>

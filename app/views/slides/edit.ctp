@@ -20,18 +20,8 @@ echo $form->input('url');
 <?php
 echo '<p>Skal sliden bare være synlig i et bestemt tidsintervall?</p>';
 
-echo $form->input('start', array('class'=>'date'));
-echo $form->input('stop', array('class'=>'date'));
-
-?>
-</fieldset>
-<script type="text/javascript">
-	$(function(){
-		$(".date").datepicker({dateFormat:"yy-mm-dd 00:00:00"});
-	});
-</script>
-<?php 
-echo $form->end('Create');
+echo $form->input('start', array('type'=>'text','class'=>'date'));
+echo $form->input('stop', array('type'=>'text','class'=>'date'));
 
 ?>
 </fieldset>
