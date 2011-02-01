@@ -20,7 +20,7 @@ $tittel = array('9'=>'Uke 32','16'=>'Uke 33','23'=>'Uke 34','30'=>'Uke 35');
 <?php for($j = 0; $j < 24; $j+= 3): ?>
 		<tr>
 			<th class="time"><?php echo "$j:00- " . ($j + 3) . ":00" ?></th>
-<?php for($k = 0; $k < 7; $k++): $tid = ($weekstart + $k * 24 * 60 * 60 + $j * 60 * 60); ?>
+<?php for($k = 0; $k < 7; $k++): $tid = ($k * 24 * 60 * 60 + $j * 60 * 60); ?>
 			<td<?php if(@$this->data['Time'][$tid]) echo ' class="selected org"' ?>><?php echo $form->checkbox('Time.' . $tid) ?></td>
 <?php endfor; ?>
 		</tr>
