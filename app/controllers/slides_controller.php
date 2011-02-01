@@ -152,6 +152,16 @@ class SlidesController extends AppController {
 		}
 	}
 	
+	function next()
+	{
+		$slides = $this->Slide->getActiveSlides();
+		
+		$slide = $slides[rand(count($slides))];
+		
+		$this->Slide->id = $slide;
+		die($this->Slide->field('url'));
+	}
+	
 	function slideshow()
 	{
 		$slides = $this->Slide->getActiveSlides();
