@@ -36,7 +36,7 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header" style="background-color:rgb(200,200,200);">
+		<div id="header" style="background-color:white;">
 			<h1 style="background:white;padding:5px;color:black;font-size:200%;font-family:arial;"><img src="http://studentersamfundet.no/kak/wp-content/uploads/2011/01/KAKLOGO_valgt.jpg" /> INFOSKJERM</h1>
 		</div>
 		<div id="content">
