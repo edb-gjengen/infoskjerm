@@ -142,7 +142,7 @@ class SlidesController extends AppController {
 			}
 			
 			if(!$this->data['Slide']['start'])
-				$this->data['Slide']['start'] = null;
+				$this->data['Slide']['start'] = null;
 			if(!$this->data['Slide']['stop'])
 				$this->data['Slide']['stop'] = null;
 			
@@ -190,7 +190,7 @@ class SlidesController extends AppController {
 		{
 		
 			if(!$this->data['Slide']['start'])
-				$this->data['Slide']['start'] = null;
+				$this->data['Slide']['start'] = null;
 			if(!$this->data['Slide']['stop'])
 				$this->data['Slide']['stop'] = null;
 				
