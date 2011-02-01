@@ -37,7 +37,7 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link(__('CakePHP: the rapid development php framework', true), '/'); ?></h1>
+			<h1><img src="http://studentersamfundet.no/kak/wp-content/uploads/2011/01/KAKLOGO_valgt.jpg" /> INFOSKJERM</h1>
 		</div>
 		<div id="content">
 
