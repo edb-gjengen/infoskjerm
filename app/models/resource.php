@@ -6,7 +6,7 @@ class Resource extends AppModel
 	
 	function getPath()
 	{
-		return WWW_ROOT . 'slides/res_' . $this->id;
+		return TMP . 'slides/res_' . $this->id;
 	}
 	
 	function getUrl()
@@ -16,7 +16,7 @@ class Resource extends AppModel
 	
 	function getThumbnail()
 	{
-		return WWW_ROOT . 'thumbnails/res_' . $this->id . '.png';
+		return TMP . 'thumbnails/res_' . $this->id . '.png';
 	}
 	
 	function getThumbnailUrl()
