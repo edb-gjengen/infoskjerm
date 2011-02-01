@@ -77,9 +77,9 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'infoskjerm',
-		'password' => 'tPuWT3d753m7sAC6',
-		'database' => 'infoskjerm',
+		'login' => 'glium337_infoskj',
+		'password' => '+wT=$oK7xko7',
+		'database' => 'glium337_infoskjerm',
 		'prefix' => '',
 	);
 
