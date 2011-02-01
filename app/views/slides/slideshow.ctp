@@ -25,7 +25,7 @@ body{
 	padding:0px;
 	margin:0px;
 	overflow:hidden;
-	background:url(<?php echo Router::url(IMAGE_URL . 'bannerindex-400.png') ?>) black;
+	background:url(<?php echo Router::url(IMAGES_URL . 'bannerindex-400.png') ?>) black;
 }
 </style>
 <?php if(!$slides):
