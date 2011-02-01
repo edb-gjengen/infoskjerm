@@ -13,6 +13,7 @@
 </style>
 <div>
 <?php echo $html->link('Add new slide', '/slides/add') ?> 
+<?php echo $html->link('View slideshow', '/slides/slideshow') ?> 
 <?php echo $html->link('Logout', '/users/logout', array('style'=>'float:right;')) ?>
 </div>
 <div id="left">
