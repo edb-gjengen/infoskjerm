@@ -141,6 +141,11 @@ class SlidesController extends AppController {
 				}
 			}
 			
+			if(!$this->data['Slide']['start'])
+				$this->data['Slide']['start'] = null;
+			if(!$this->data['Slide']['stop'])
+				$this->data['Slide']['stop'] = null;
+			
 			if($this->Slide->save($this->data))
 			{
 				$this->Session->setFlash('Slide opprettet');
@@ -183,6 +188,12 @@ class SlidesController extends AppController {
 	{
 		if(isset($this->data))
 		{
+		
+			if(!$this->data['Slide']['start'])
+				$this->data['Slide']['start'] = null;
+			if(!$this->data['Slide']['stop'])
+				$this->data['Slide']['stop'] = null;
+				
 			if($this->Slide->save($this->data))
 			{
 				$this->redirect('index');
