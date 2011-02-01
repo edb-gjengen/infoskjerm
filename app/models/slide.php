@@ -10,8 +10,8 @@ class Slide extends AppModel {
 		$enabledSlides = $this->find('list',
 				array('conditions'=>
 					array('Slide.enabled'=>1, 
-						'(Slide.start IS NULL OR Slide.start <= now()',
-						'Slide.top IS NULL OR Slide.stop >= now()')));
+						'(Slide.start IS NULL OR Slide.start <= now())',
+						'(Slide.top IS NULL OR Slide.stop >= now())')));
 		
 		$enabledSlides = array_keys($enabledSlides);
 		

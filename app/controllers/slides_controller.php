@@ -43,13 +43,13 @@ class SlidesController extends AppController {
 			$times = $this->data['Time'];
 			ksort($times);
 			
-			$intStart = 0;
+			$intStart = false;
 			foreach($times as $time=>$on)
 			{
-				if(!$on && $intStart)
+				if(!$on && $intStart !== false)
 				{
 					$intervals[] = array('start'=>$intStart, 'stop'=>$time,'slide_id'=>$id);
-					$intStart = 0;
+					$intStart = false;
 				}
 				else if($on && $intStart == 0)
 				{
@@ -57,7 +57,7 @@ class SlidesController extends AppController {
 				}
 			}
 			
-			if($intStart != 0)
+			if($intStart !== false)
 			{
 				$intervals[] = array('start'=>$intStart, 'stop'=>$time,'slide_id'=>$id);
 			}
