@@ -8,11 +8,10 @@ echo $html->link('Check/uncheck all','#',array('id'=>'toggleall')) . ' ';
 echo $html->link('Revert current changes','/slides/timing/' . $this->data['Slide']['id'],array('id'=>'revert'));
 echo '</div>';
 $tittel = array('9'=>'Uke 32','16'=>'Uke 33','23'=>'Uke 34','30'=>'Uke 35');
-for($i = 9; $i < 31; $i+=7): 
-$weekstart = strtotime("$i August 2010");
+
 ?>
 <div style="width:40%;float:left;margin:10px;clear:none;">
-<h2><?php echo $tittel[$i] ?></h2>
+<h2>Ukesoversikt</h2>
 	<table>
 		<tr>
 			<th>Tid</th>
@@ -28,7 +27,7 @@ $weekstart = strtotime("$i August 2010");
 <?php endfor; ?>
 	</table>
 </div>
-<?php endfor;?>
+
 
 <div style="clear:both;">
 	<?php echo $form->submit("Save"); 
