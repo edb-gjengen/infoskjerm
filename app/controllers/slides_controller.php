@@ -140,29 +140,12 @@ class SlidesController extends AppController {
 					}
 				}
 			}
+			
 			if($this->Slide->save($this->data))
 			{
 				$this->Session->setFlash('Slide opprettet');
-				$this->Session->write("NewSlide", $this->Slide->id);
 				
-				if($this->data['Slide']['simple'])
-				{
-					$this->data['DisplayTime'][0]['slide_id'] = $this->Slide->id;
-					
-					if($this->data['DisplayTime'][0]['start'])
-						$this->data['DisplayTime'][0]['start'] = strtotime($this->data['DisplayTime'][0]['start']);
-					else
-						$this->data['DisplayTime'][0]['start'] = 0;
-						
-					if($this->data['DisplayTime'][0]['stop'])
-						$this->data['DisplayTime'][0]['stop'] = strtotime($this->data['DisplayTime'][0]['stop']);
-					else
-						$this->data['DisplayTime'][0]['stop'] = 999999999999999999;
-					
-					$this->Slide->DisplayTime->save($this->data['DisplayTime'][0]);
-					
-					$this->redirect('index');
-				}
+				$this->Session->write("NewSlide", $this->Slide->id);
 				
 				$this->redirect('timing/' . $this->Slide->id);
 			}

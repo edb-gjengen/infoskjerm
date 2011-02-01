@@ -41,9 +41,7 @@
 		<h3><?php echo $slide['Slide']['title']; ?></h3>
 		<p>
 			<?php echo $html->link('Edit', '/slides/edit/' . $slide['Slide']['id']) ?>
-<?php if(!$slide['Slide']['simple']):?>
 			<?php echo $html->link('Set timing', '/slides/timing/' . $slide['Slide']['id']) ?>
-<?php endif; ?>
 			<?php echo $html->link('Enable', '/slides/enable/' . $slide['Slide']['id']) ?>
 		</p>
 		<img src="<?php echo $slide['Slide']['thumbnail']?$slide['Slide']['thumbnail']:Router::url('/img/nothumb.png')?>" />"

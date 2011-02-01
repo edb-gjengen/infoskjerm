@@ -16,29 +16,16 @@ echo $form->file('Upload.file');
 <legend>Start/stop</legend>
 <?php
 
-echo '<p>La feltet stå tomt for å ikke ha noe spesielt start/stopp tidspunkt</p>';
+echo '<p>Skal sliden bare være synlig i et bestemt tidsintervall?</p>';
 
-
-echo '<div id="simplebox">';
-echo $form->label('simple','Use simple timing:');
-echo $form->checkbox('simple');
-echo '</div>';
-
-echo $form->hidden('DisplayTime.0.slide_id');
-echo $form->input('DisplayTime.0.start', array('class'=>'date'));
-echo $form->input('DisplayTime.0.stop', array('class'=>'date'));
+echo $form->input('start', array('class'=>'date'));
+echo $form->input('stop', array('class'=>'date'));
 
 ?>
 </fieldset>
 <script type="text/javascript">
 	$(function(){
-		$(".date").datepicker({dateFormat:"yy-mm-dd 00:00:00",
-					onSelect:function(){
-						if(!$("#SlideSimple").attr('checked')){
-							$("#SlideSimple").attr('checked', true);
-							//$("#simplebox").effect('bounce',250);
-						}
-					}});
+		$(".date").datepicker({dateFormat:"yy-mm-dd 00:00:00"});
 	});
 </script>
 <?php 
