@@ -78,7 +78,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'glium337_infoskj',
-		'password' => '+wT=$oK7xko7',
+		'password' => '',
 		'database' => 'glium337_infoskjerm',
 		'prefix' => '',
 	);
