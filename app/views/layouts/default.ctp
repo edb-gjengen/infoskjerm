@@ -37,7 +37,7 @@
 <body>
 	<div id="container">
 		<div id="header" style="background-color:white;"><a href="<?php echo Router::url(''); ?>">
-			<h1 style="background:white;padding:5px;color:black;font-size:200%;font-family:arial;"><img  style="border:0px;" src="http://studentersamfundet.no/kak/wp-content/uploads/2011/01/KAKLOGO_valgt.jpg" /> INFOSKJERM</h1></a>
+			<h1 style="background:white;padding:5px;font-family:courier;font-weight:bold;color:black;height:116px;font-size:200%;"><img  style="border:0px;margin-bottom:-50px;" src="http://studentersamfundet.no/kak/wp-content/uploads/2011/01/KAKLOGO_valgt.jpg" /> INFOSKJERM</h1></a>
 		</div>
 		<div id="content">
 
