@@ -22,7 +22,7 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $title_for_layout; ?>
+		DNS Infoskjerm app
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
