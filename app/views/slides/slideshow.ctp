@@ -1,3 +1,6 @@
+
+<!--- time = <?php echo @$time ?> -->
+
 <style type="text/css">
 #slideshow iframe, img, #overlay
 {
@@ -19,6 +22,7 @@ img
 #overlay
 {
 	z-index:9;
+	cursor:none;
 }
 
 body{
@@ -67,11 +71,12 @@ $(function(){
 	$("#slideshow").cycle(
 	
 	{
-		fx:"blindX,blindY,blindZ,cover,curtainX,curtainY,fade,"+
+		fx:"none",
+/*"blindX,blindY,blindZ,cover,curtainX,curtainY,fade,"+
 		   "fadeZoom,growX,growY,none,scrollUp,scrollDown,"+
 		   "scrollLeft,scrollRight,scrollHorz,scrollVert,"+
-		   "shuffle,slideX,slideY,toss,turnUp,turnDown,turnLeft,turnRight,uncover,wipe,zoom",
-		timeout:6000,
+		   "shuffle,slideX,slideY,toss,turnUp,turnDown,turnLeft,turnRight,uncover,wipe,zoom",*/
+		timeout:20000,
 		speed:2000,
 		after:function(currSlideElement, nextSlideElement)
 		{
@@ -96,8 +101,11 @@ function updateSlides()
 			});
 }
 
+updateSlides();
 setInterval(updateSlides, 120000);
+
 if($("img").length)
 	setTimeout(function(){$("img").hide("fast")},5000);
 
+setTimeout(function(){window.location = "http://studentersamfundet.no/infoskjerm/index.php/slides/slideshow";}, 10 * 60 * 1000);
 </script>

@@ -9,6 +9,7 @@ class SlidesController extends AppController {
 	function beforeFilter()
 	{
 		$this->Auth->allow("slideshow");
+		$this->Auth->allow("hasslides");
 		$this->Auth->allow("next");
 	}
 	
@@ -169,9 +170,24 @@ class SlidesController extends AppController {
 		die($this->Slide->field('url'));
 	}
 	
-	function slideshow()
+	function test($time = 0)
+	{
+		$time = time() + $time * 3600;
+		
+		var_dump($this->Slide->DisplayTime->getTimedSlides($time));
+	}
+	
+	function hasslides()
 	{
 		$slides = $this->Slide->getActiveSlides();
+		
+		die($slides ? 'we has slides!' : 'we not has slides :(');
+	}
+	
+	function slideshow($time = null)
+	{
+			
+		$slides = $this->Slide->getActiveSlides($time);
 		
 		if(count($slides) == 1) $slides = array_pop($slides);
 		$slides = $this->Slide->find('all', array('conditions'=>array('id'=>$slides)));
@@ -181,7 +197,9 @@ class SlidesController extends AppController {
 			die(json_encode($slides));
 		}
 		
-		$this->set(compact('slides'));
+		$time = $this->Slide->time;
+		
+		$this->set(compact('slides','time'));
 		
 		$this->layout = 'slideshow';
 	}
