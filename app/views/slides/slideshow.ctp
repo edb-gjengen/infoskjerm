@@ -29,7 +29,7 @@ body{
 	padding:0px;
 	margin:0px;
 	overflow:hidden;
-	background:url(<?php echo Router::url(IMAGES_URL . 'bannerindex-400.png') ?>) black;
+	background:black url('http://infoskjerm.neuf.no/img/bannerindex-400.png') no-repeat center center;
 }
 </style>
 <?php if(!$slides):
@@ -107,5 +107,5 @@ setInterval(updateSlides, 120000);
 if($("img").length)
 	setTimeout(function(){$("img").hide("fast")},5000);
 
-setTimeout(function(){window.location = "http://studentersamfundet.no/infoskjerm/index.php/slides/slideshow";}, 10 * 60 * 1000);
+setTimeout(function(){window.location = "http://infoskjerm.neuf.no/index.php/slides/slideshow";}, 10 * 60 * 1000);
 </script>
