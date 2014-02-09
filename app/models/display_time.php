@@ -28,7 +28,8 @@ class DisplayTime extends AppModel
 	
 	function filterByDisplayTime($ids)
 	{
-		$timeofweek = time() - strtotime('this week midnight');
+		$timeofweek = time() - strtotime('this week midnight'); // Fucks up infoscreen every sunday
+		$timeofweek = time() - strtotime(date('o-\\WW')); // {isoYear}-W{isoWeekNumber}
 		
 		$tmp = $this->find('all', array('fields'=>array('slide_id'), 'conditions'=>array('DisplayTime.slide_id'=>$ids,'DisplayTime.start <= '=>$timeofweek, 'DisplayTime.stop >= '=>$timeofweek)));
 		
