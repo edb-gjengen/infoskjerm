@@ -107,5 +107,5 @@ setInterval(updateSlides, 120000);
 if($("img").length)
 	setTimeout(function(){$("img").hide("fast")},5000);
 
-setTimeout(function(){window.location = "http://infoskjerm.neuf.no/index.php/slides/slideshow";}, 10 * 60 * 1000);
+setTimeout(function(){window.location = "http://infoskjerm.neuf.no/slideshow";}, 10 * 60 * 1000);
 </script>
